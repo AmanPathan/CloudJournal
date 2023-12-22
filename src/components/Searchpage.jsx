@@ -445,7 +445,7 @@ const Searchpage = () => {
                         <div className="footer">
                             <p className="developer">Designed and Developed by AmanPathan</p>
                             &nbsp;
-                            <a href="https://github.com/AmanPathan/WeatherForecastApp" target="_blank" className="link"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://github.com/AmanPathan/CloudJournal" target="_blank" className="link"><i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
                 </div>
