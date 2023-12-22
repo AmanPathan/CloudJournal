@@ -1,20 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Search from "./components/Search";
-import Navbar from "./components/Navbar";
 import Error from "./components/Error";
+import Hero from "./components/Hero";
+import Searchpage from "./components/Searchpage";
 
-import "./App.css";
 
 function App() {
   return (
     <>
-      <Navbar/>
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/" element={<Error />} />
+        <Route path="/" element={<Hero/>} />
+        <Route path="/forecast" element={<Searchpage/>} />
+        <Route path="/*" element={<Error/>} />
       </Routes>
     </>
   );

@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+.container {
+  background-color: #d9d9d9;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  z-index: 10;
+}
+.left-container,
+.right-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-container {
+  background-color: #1b1b1b;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.illustration {
+  width: 60%;
+}
+.content {
+  width: 80%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.content-title {
+  font-size: 40px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  margin: 0;
+}
+.content-tagline {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Nunito Sans", sans-serif;
+  font-style: italic;
+}
+.content-text {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+}
+.content-list {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+ul {
+  flex-direction: column;
+  color: #fff;
+}
+.fa-circle-check {
+  color: #2faa4b;
+  font-size: 20px;
+}
+.content-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.explore {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  background-color: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: "Nunito Sans", sans-serif;
+  transition: 0.7s;
+}
+.explore:after {
+  content: "";
+  background-color: #5c9ce5;
+  /* background-color: #2faa4b; */
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+  z-index: -1;
+}
+
+.explore:hover:after {
+  top: 0px;
+  left: 0px;
+}
+/* .explore:hover{
+    background-color: #2faa4b;
+    border: 1px solid #d9d9d9;
+} */
+@media (min-width: 768px) {
+  .explore {
+    padding: 13px 50px 13px;
+  }
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  letter-spacing: 1px;
+  justify-content: space-around;
+}   
+ul li{
+  padding: 5px;
+}
+@media (max-width:425px){
+  ul{
+      padding: 0;
+  }
+  ul li {
+      margin-left: 10px;
+      margin-right: 10px;
+  } 
+}
