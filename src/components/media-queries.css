@@ -1,0 +1,328 @@
+@media screen and (max-width: 1024px) {
+  .container_bottom {
+    height: 100vh;
+  }
+  .quality_div {
+    width: 80px;
+    height: 120px;
+  }
+  .sun {
+    width: 25px;
+    height: 25px;
+  }
+  .moon {
+    width: 20px;
+    height: 20px;
+  }
+  .sunrise,
+  .moonrise {
+    width: 18px;
+    height: 18px;
+  }
+  .sunrise_title {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container_forecast {
+    height: 100%;
+  }
+  .container_center {
+    height: 210vh;
+  }
+  .container_bottom_2 {
+    height: fit-content;
+    justify-content: space-between;
+  }
+  .sunrise_data {
+    height: 50vh;
+    margin-left: 20px;
+  }
+  .more1 {
+    margin-left: -40px;
+  }
+  .airquality_data {
+    margin-right: 20px;
+    height: 50vh;
+  }
+  .sunrise_div {
+    flex-direction: column;
+  }
+  .sunrise_left,
+  .moonrise_right {
+    width: 90%;
+    height: 50%;
+  }
+  .sunrise_left {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  }
+  .sunrise_temp1 {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .airdata_row {
+    display: none;
+  }
+  .airdata_mobile {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 60vh;
+  }
+  .airdata_col {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 140px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .more_icons {
+    display: none;
+  }
+  .more_title {
+    justify-content: center;
+    font-size: 18px;
+  }
+  .grid_div {
+    height: 80%;
+  }
+  .metric {
+    font-size: 18px;
+  }
+  .more_info {
+    font-size: 25px;
+  }
+  .more_info1 {
+    font-size: 18px;
+    width: fit-content;
+    text-align: center;
+  }
+  .citytime {
+    text-align: center;
+  }
+  .company_name {
+    font-size: 20px;
+  }
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+  .datetime_left {
+    align-items: center;
+  }
+  .more1 {
+    margin-left: -30px;
+  }
+  .airquality_data {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 426px) {
+  .sunrise_data {
+    height: 240px;
+  }
+  .sunrise_temp1,
+  .sunrise_temp {
+    margin-left: 0px;
+    padding-left: 0px !important;
+  }
+  .sunrise_temp {
+    font-size: 18px;
+  }
+  .container_top {
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    background-color: transparent;
+  }
+  .container_center {
+    height: 100%;
+  }
+  .left_forecast {
+    width: 100%;
+    height: 92vh;
+  }
+  .right_forecast {
+    width: 100%;
+    height: 120vh;
+    align-content: space-between;
+  }
+  .suggest_li {
+    width: 85%;
+  }
+  .datetime {
+    width: 90%;
+    height: 100px;
+    justify-content: center;
+  }
+  .datetime_left {
+    height: 60px;
+  }
+  .day_weather {
+    font-size: 25px;
+  }
+  .temperature {
+    font-size: 50px;
+  }
+  .weather_icon {
+    height: 50px;
+    width: 50px;
+  }
+  .temp_div {
+    height: 120px;
+  }
+  .company_name {
+    font-size: 23px;
+    padding: 8px;
+    right: 10px;
+  }
+  .date {
+    padding-left: 22px;
+  }
+  .dailyForecast1 {
+    width: 100%;
+    height: 220px;
+    margin-top: 30px;
+  }
+  .daily_div1 {
+    width: 100px;
+    margin-left: 15px;
+  }
+  .moreInfo {
+    flex-direction: row;
+    padding-top: 20px;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .grid_container {
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .grid_container_mobile {
+    align-items: flex-end;
+  }
+  .grid_div {
+    width: 90%;
+    height: 150px;
+  }
+  .more_title {
+    width: 90%;
+  }
+  .more1 {
+    font-size: 21px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .fa-circle-info {
+    width: 25px;
+  }
+  .container_bottom {
+    height: 140vh;
+    background-color: transparent;
+  }
+  .dailyForecast {
+    width: 100%;
+    height: 220px;
+  }
+  .container_bottom_2 {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+  }
+  .more1 {
+    margin-left: 0px;
+    font-size: 20px;
+  }
+  .airquality_data,
+  .sunrise_data {
+    margin: 0;
+    width: 100%;
+  }
+  .airquality_data {
+    height: fit-content;
+  }
+  .pollutants {
+    padding-top: 15px;
+  }
+  .developer {
+    font-size: 16px;
+  }
+  .fa-github {
+    font-size: 20px;
+  }
+  .airdata_row {
+    display: none;
+  }
+  .airdata_mobile {
+    display: flex;
+    width: 100%;
+    height: 45vh;
+    flex-direction: column;
+  }
+  .airdata_col {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 140px;
+  }
+  .quality_div {
+    height: 120px;
+    width: 100px;
+  }
+  .weather_icon_load {
+    width: 30px;
+    height: 30px;
+  }
+  .index_text {
+    font-size: 20px;
+  }
+  .index_value {
+    font-size: 22px;
+  }
+  .index_unit {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .more1,.icon_daily {
+    font-size: 18px;
+  }
+  .developer {
+    font-size: 14px;
+  }
+  .quality_div{
+    width: 110px;
+  }
+  .suggestions{
+    width: 80%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .left_forecast{
+    height: 80vh;
+  }
+  .more1,.icon_daily{
+    font-size: 16px;
+  }
+  .quality_div{
+    width: 85px;
+  }
+  .developer {
+    font-size: 13px;
+  }
+  .datetime{
+    height: 150px;
+  }
+}

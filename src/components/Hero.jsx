@@ -13,13 +13,13 @@ const Hero = () => {
                 <div className="left-container">
                     <img className="illustration" src={image1} />
                     <div className='content-list'>
-                        <ul>
-                            <li><i class="fa-regular fa-circle-check"></i> Real-Time Weather Updates</li>
-                            <li><i class="fa-regular fa-circle-check"></i> Location-Centric Forecasting</li>
+                        <ul className='content-ul'>
+                            <li className='content-li'><i class="fa-regular fa-circle-check"></i> Real-Time Weather Updates</li>
+                            <li className='content-li'><i class="fa-regular fa-circle-check"></i> Location-Centric Forecasting</li>
                         </ul>
-                        <ul>
-                            <li><i class="fa-regular fa-circle-check"></i> Accurate and Reliable Data</li>
-                            <li><i class="fa-regular fa-circle-check"></i> Interactive Weather Maps</li>
+                        <ul className='content-ul'>
+                            <li className='content-li'><i class="fa-regular fa-circle-check"></i> Accurate and Reliable Data</li>
+                            <li className='content-li'><i class="fa-regular fa-circle-check"></i> Interactive Weather Maps</li>
                         </ul>
                     </div>
                 </div>
