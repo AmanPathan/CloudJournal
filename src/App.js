@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Hero/>} />
         <Route path="/forecast" element={<Searchpage/>} />
-        <Route path="/*" element={<Error/>} />
+        <Route path="*" element={<Error/>} />
       </Routes>
     </>
   );

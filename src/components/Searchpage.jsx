@@ -69,7 +69,7 @@ const Searchpage = () => {
     const [uvRemark, setUVRemark] = useState('');
     const [astroData, setAstroData] = useState([]);
     const [finalDayData, setFinalDayData] = useState([]);
-
+    const [astro_curr_date,setAstroCurrDate] = useState('');
     const [airData, setAirData] = useState([]);
 
     const [metricflag, setMetricflag] = useState(true);
@@ -84,8 +84,8 @@ const Searchpage = () => {
     let IDURL = `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${city}`;
     let IDURL2 = `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${locationData}`;
 
-    let AstronomyURL = `http://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=${city}&dt=${astro_date}`;
-
+    // let AstronomyURL = `http://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=${city}&dt=${astro_date}`;
+    let AstronomyURL = `http://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=${city}`;
 
     const GetID = async (url) => {
         const response = await fetch(url);
@@ -94,14 +94,15 @@ const Searchpage = () => {
         setID(Rjson[0].id);
         setCityName(Rjson[0].name);
         setCityRegion(Rjson[0].region);
-
-        const astroRes = await fetch(AstronomyURL);
-        const astrojson = await astroRes.json();
+    }
+    const getAstroData = async ()=>{
+        const astroRes = await axios.get(AstronomyURL);
+        const astrojson = await astroRes.data;
         setAstroData(astrojson.astronomy.astro);
     }
-
     useEffect(() => {
         GetID(IDURL);
+        getAstroData();
     }, [city]);
 
     const dailyData = [];
@@ -184,6 +185,7 @@ const Searchpage = () => {
         setPressure(data.current.pressure_mb);
         setUV(data.current.uv);
         setAirQ(data.current.air_quality['us-epa-index']);
+        setAstroCurrDate(data.location.localtime);
 
         let airqualitydetails = {
             "co": data.current.air_quality.co,
@@ -195,14 +197,13 @@ const Searchpage = () => {
         }
         setAirData(airqualitydetails);
 
-        let curr_date = data.location.localtime;
-        let timetoCmp = curr_date.slice(11, 13);
-        let astronomy_date = curr_date.slice(0, 10);
+        let timetoCmp = astro_curr_date.slice(11, 13);
+        let astronomy_date = astro_curr_date.slice(0, 10);
         setAstroDate(astronomy_date);
-        let today = curr_date.slice(8, 10);
-        curr_date = `${weekDay} ${today} ${month}`;
-        setDate(curr_date);
-
+        let today = astro_curr_date.slice(8, 10);
+        let astro_curr_date1 = `${weekDay} ${today} ${month}`;
+        setDate(astro_curr_date1);
+        
         if (timetoCmp === curr_time) {
             setTimeFlag(true);
         }
@@ -211,8 +212,9 @@ const Searchpage = () => {
         }
         console.log("inside GetInfo");
         setIsLoading(false);
+        console.log(astronomy_date);
     }
-
+    
     const getData = async () => {
         // const res = await axios.get("https://api.ipify.org/?format=json");
         // let LocationURL = `http://ip-api.com/json/${res.data.ip}`
@@ -242,10 +244,10 @@ const Searchpage = () => {
 
     return (
         <>
-            <div className={isLoading ? "loader_div" : "loader_div_none"}>
+            {/* <div className={isLoading ? "loader_div" : "loader_div_none"}>
                 <span class="loader"></span>
                 <p className="loader_text">Wait while we load the data ...</p>
-            </div>
+            </div> */}
             <div className="container_forecast">
                 <div className="container_center">
                     <div className="container_top">
@@ -257,6 +259,7 @@ const Searchpage = () => {
                                 <input type="text" placeholder="Search Location"
                                     className='search_bar'
                                     id="search_bar"
+                                    autocomplete="off"
                                     value={city}
                                     onChange={(e) => {
                                         setCity(e.target.value);
