@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import './forecast.css';
 import './media-queries.css';
 import sunrise from './images/sunrise.png';
@@ -100,11 +100,15 @@ const Searchpage = () => {
         const astrojson = await astroRes.data;
         setAstroData(astrojson.astronomy.astro);
     }
-    useEffect(() => {
+    // useEffect(() => {
+    //     GetID(IDURL);
+    //     getAstroData();
+    // }, [city]);
+    
+    useMemo(()=>{
         GetID(IDURL);
         getAstroData();
-    }, [city]);
-
+    },[city]);
     const dailyData = [];
     const hourlyData = [];
 
