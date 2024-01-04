@@ -159,7 +159,7 @@ const Searchpage = () => {
 
         setHourData(hourlyData);
 
-        for (let k = 1; k < 7; k++) {
+        for (let k = 1; k < 3; k++) {
             let d = new Date(forecastData[k].date);
             let dayIndex = d.getDay();
             let c = forecastData[k].date
