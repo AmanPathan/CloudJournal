@@ -62,7 +62,7 @@ const Searchpage = () => {
                 <span class="loader"></span>
                 <p className="loader_text">Wait while we load the data ...</p>
             </div> */}
-            <Forecast location={currData.location} forecastData={forecastData}  current={currData.current} curr_data={currData} handleCity={handleCityName}/>
+            <Forecast location={currData.location} getIp={getIp} forecastData={forecastData}  current={currData.current} curr_data={currData} handleCity={handleCityName}/>
         </>
     )
 }

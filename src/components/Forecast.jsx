@@ -12,7 +12,7 @@ import moon from './images/moon.png';
 import moonrise_img from './images/moonrise.png';
 import moonset_img from './images/moonset.png';
 import cloud from './images/cloujournal.png';
-function Forecast({ location, forecastData, current, handleCity }) {
+function Forecast({ getIp,location, forecastData, current, handleCity }) {
     const Days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
     const scroll_Left = () => {
@@ -64,7 +64,6 @@ function Forecast({ location, forecastData, current, handleCity }) {
         const url = `http://api.weatherapi.com/v1/search.json?key=ce7b63cece294cbb99183108231912&q=${cityname}`;
         const res2 = await axios.get(url);
         setCityList(res2.data);
-        console.log(citylist);
     }
     return (
         <>
@@ -82,7 +81,6 @@ function Forecast({ location, forecastData, current, handleCity }) {
                                     autocomplete="off"
                                     value={city}
                                     onChange={(e) => {
-                                        handleCity(e.target.value);
                                         setCity(e.target.value);
                                         handleChange(e.target.value);
                                     }}
@@ -92,25 +90,27 @@ function Forecast({ location, forecastData, current, handleCity }) {
                                         }
                                     }}
                                 />
-                                <i class="fa-solid fa-location-crosshairs location_icon" onClick={() => { }}></i>
+                                <i class="fa-solid fa-location-crosshairs location_icon" onClick={() => {getIp();setCity('') }}></i>
                             </div>
-                            {/* <div className={resData.length > 0 ? "suggestions" : ""}>
+                            <div className={citylist.length > 0 ? "suggestions" : ""}>
                                 <ul className="suggest_ul">
                                     {
-                                        resData.length > 0 ?
-                                            resData.map((item) => {
+                                        citylist.length > 0 ?
+                                            citylist.map((item) => {
+                                                const {name} = item;
                                                 return <li className="suggest_li"
                                                     onClick={() => {
-                                                        setCity(item.name);
-                                                        setResponse([]);
+                                                        setCity(name);
+                                                        handleCity(name);
+                                                        setCityList([]);
                                                         document.getElementById("search_bar").focus();
                                                     }}>
-                                                    {item.name}</li>
+                                                    {name}</li>
                                             }) :
                                             null
                                     }
                                 </ul>
-                            </div> */}
+                            </div>
                             <div className="datetime">
                                 <div className="datetime_left">
                                     <div className="citytime"><i class="fa-solid fa-location-dot arrow"></i> {name ? `${name}, ${region}` : ""} </div>
